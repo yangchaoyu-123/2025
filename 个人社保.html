@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.net/twitter-bootstrap/5.1.1/css/bootstrap.min.css">
+ 
+<!-- 最新的 Bootstrap5 核心 JavaScript 文件 -->
+<script src="https://cdn.staticfile.net/twitter-bootstrap/5.1.1/js/bootstrap.bundle.min.js"></script>
+<style>
+    table{
+        width: 1000px;
+        height: 500px;
+        margin: auto;
+    }
+    td{
+        text-align: center;
+    }
+    #a{
+        background-color: crimson;
+        color: white
+    }
+    #a:hover{
+        background-color: brown;
+    }
+</style>
+<script>
+    
+    }
+</script>
+</head>
+<body>
+    <h1 align="center">社保计算软件（Web版）</h1>
+    <h2>一、页面效果</h2>
+    <p align="center">社保计算软件-Web版</p>
+     <table class="table-bordered table-hover" border="2px solid grey">
+        <tr>
+            <td align="center">工资</td>
+            <td colspan="3">
+                <input id="b" type="text" class="form-control"placeholder="请输入工资">
+            </td>
+            <td>
+                <button id="a" class="form-control" oncanplay="b()">计算</button>
+            </td>
+        </tr>
+        <tr style="background-color:dodgerblue;">
+            <td >险种</td>
+            <td>个人%</td>
+            <td>个人</td>
+            <td>公司%</td>
+            <td>公司</td>
+        </tr>
+        <tr>
+            <td>养老</td>
+            <td>8%</td>
+            <td id="c1"></td>
+            <td>20%</td>
+            <td id="c2"></td>
+        </tr>
+        <tr>
+            <td>医疗</td>
+            <td>2%</td>
+            <td id="d1"></td>
+            <td>6%</td>
+            <td id="d2"></td>
+        </tr>
+        <tr>
+            <td>失业</td>
+            <td>0.5%</td>
+            <td id="e1"></td>
+            <td>1.5%</td>
+            <td id="e2"></td>
+        </tr>
+        <tr>
+            <td>工伤</td>
+            <td></td>
+            <td></td>
+            <td>0.5%</td>
+            <td id="f"></td>
+        </tr>
+        <tr>
+            <td>生育</td>
+            <td></td>
+            <td></td>
+            <td>0.8%</td>
+            <td id="g"></td>
+        </tr>
+        <tr>
+            <td>公积金</td>
+            <td>12%</td>
+            <td id="h1"></td>
+            <td>12%</td>
+            <td id="h2"></td>
+        </tr>
+        <tr>
+            <td>合计</td>
+            <td>个人合计</td>
+            <td id="i1"></td>
+            <td>公司合计</td>
+            <td id="i2"></td>
+        </tr>
+        <tr>
+            <td>总额</td>
+            <td colspan="4" id="j"></td>
+        </tr>
+     </table>
+     <script>
+        document.getElementById('a').addEventListener('click',function a(){
+            const b=parseInt(document.getElementById('b').value)||0;
+           const c1=b*0.08;
+           const c2=b*0.2;
+           const d1=b*0.02;
+           const d2=b*0.06;
+           const e1=b*0.005;
+           const e2=b*0.015;
+           const f=b*0.005;
+           const g=b*0.008;
+           const h1=b*0.12;
+           const h2=b*0.12;
+           const i1=c1+d1+e1+h1;
+           const i2=c2+d2+e2+f+g+h2;
+           const j=i1+i2;
+           document.getElementById('c1').innerText=c1;
+           document.getElementById('c2').innerText=c2;
+           document.getElementById('d1').innerText=d1;
+           document.getElementById('d2').innerText=d2;
+           document.getElementById('e1').innerText=e1;
+           document.getElementById('e2').innerText=e2;
+           document.getElementById('f').innerText=f;
+           document.getElementById('g').innerText=g;
+           document.getElementById('h1').innerText=h1;
+           document.getElementById('h2').innerText=h2;
+           document.getElementById('i1').innerText=i1;
+           document.getElementById('i2').innerText=i2;
+           document.getElementById('j').innerText=j;
+           window.onload=a;
+        })
+     </script>
+</body>
+</html>
